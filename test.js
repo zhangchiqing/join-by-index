@@ -1,10 +1,6 @@
-# join-by-index
-A function that joins two arrays with index fields
-
-## Usage:
-```
+var assert = require('assert');
 var R = require('ramda');
-var joinByIndex = require('join-by-index');
+var O = require('./index');
 
 // [User]
 var users = [
@@ -33,7 +29,7 @@ var makePhotoWithUserName = function(user, photo) {
 };
 
 // [PhotoWithUserName]
-var photosWithUserName = joinByIndex(
+var photosWithUserName = O(
   R.prop('id'),
   R.prop('userId'),
   makePhotoWithUserName,
@@ -41,17 +37,10 @@ var photosWithUserName = joinByIndex(
   photos
 );
 
-console.log(photosWithUserName);
-// [
-//   { userId: 1, photo: ' :) ', username: 'userA' },
-//   { userId: 3, photo: ' :( ', username: 'userC' },
-//   { userId: 2, photo: ' :-) ', username: 'userB' },
-//   { userId: 2, photo: ' :-/ ', username: 'userB' },
-//   { userId: 4, photo: ' :-)) ', username: null },
-// ]
-```
-
-## API
-```
-joinByIndex :: (a -> c) -> (b -> c) -> (a?, b) -> d -> [a] -> [b] -> [d]
-```
+assert.deepEqual(photosWithUserName, [
+  { userId: 1, photo: ' :) ', username: 'userA' },
+  { userId: 3, photo: ' :( ', username: 'userC' },
+  { userId: 2, photo: ' :-) ', username: 'userB' },
+  { userId: 2, photo: ' :-/ ', username: 'userB' },
+  { userId: 4, photo: ' :-)) ', username: null },
+]);

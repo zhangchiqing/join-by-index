@@ -1,0 +1,22 @@
+{
+  "name": "join-by-index",
+  "version": "0.1.0",
+  "description": "A function that joins two arrays with the index field",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zhangchiqing/join-by-index.git"
+  },
+  "author": "Leo Zhang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zhangchiqing/join-by-index/issues"
+  },
+  "homepage": "https://github.com/zhangchiqing/join-by-index#readme",
+  "dependencies": {
+    "ramda": "^0.22.1"
+  }
+}
