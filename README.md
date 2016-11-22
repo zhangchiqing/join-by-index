@@ -2,7 +2,7 @@
 A function that joins two arrays with index fields
 
 ## Usage:
-```
+```javascript
 var R = require('ramda');
 var joinByIndex = require('join-by-index');
 
